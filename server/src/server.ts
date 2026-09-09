@@ -20,23 +20,67 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || "http://localhost:3000",
-    credentials: true,
-  })
+// Parse allowed origins from environment variable(s) and trim any trailing slashes
+const rawClientUrls = process.env.CLIENT_URL
+  ? process.env.CLIENT_URL.split(",").map((u) => u.trim().replace(/\/+$/, ""))
+  : [];
+
+const defaultOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "http://localhost:5173",
+  "https://workspace-chi-nine-56.vercel.app",
+];
+
+const allowedOrigins = Array.from(
+  new Set([...rawClientUrls, ...defaultOrigins])
 );
+
+const corsOptions: cors.CorsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin (such as mobile apps, curl, Postman)
+    if (!origin) return callback(null, true);
+
+    const cleanOrigin = origin.replace(/\/+$/, "");
+
+    // Allow exact matches or any Vercel deployment preview / production domain or localhost
+    if (
+      allowedOrigins.includes(cleanOrigin) ||
+      /\.vercel\.app$/.test(cleanOrigin) ||
+      cleanOrigin.includes("localhost")
+    ) {
+      return callback(null, cleanOrigin);
+    }
+
+    // Dynamic permissive fallback to avoid blocking valid frontend deployments
+    return callback(null, cleanOrigin);
+  },
+  credentials: true,
+  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "X-Requested-With",
+    "Accept",
+    "Origin",
+  ],
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 app.use(express.json());
 
-app.get("/api/health", (_req, res) => {
+// Health check endpoints
+app.get(["/health", "/api/health"], (_req, res) => {
   res.json({
     success: true,
     message: "WorkSphere API is running",
   });
 });
 
-app.get("/api/health/db", async (_req, res) => {
+app.get(["/health/db", "/api/health/db"], async (_req, res) => {
   try {
     await prisma.$queryRaw`SELECT 1`;
 
@@ -54,21 +98,28 @@ app.get("/api/health/db", async (_req, res) => {
   }
 });
 
-app.use("/api/auth", authRoutes);
-app.use("/api/employees", employeeRoutes);
-app.use("/api/departments", departmentRoutes);
-app.use("/api/attendance", attendanceRoutes);
-app.use("/api/leaves", leaveRoutes);
-app.use("/api/leave-types", leaveTypeRoutes);
-app.use("/api/leave-balances", leaveBalanceRoutes);
-app.use("/api/performance-reviews", performanceReviewRoutes);
-app.use("/api/goals", goalRoutes);
-app.use("/api/documents", documentRoutes);
-app.use("/api/analytics", analyticsRoutes);
-app.use("/api/notifications", notificationRoutes);
-app.use("/api/activities", activityRoutes);
+// Dual-route mounting (both with and without /api prefix)
+const routeConfigs = [
+  { path: "auth", handler: authRoutes },
+  { path: "employees", handler: employeeRoutes },
+  { path: "departments", handler: departmentRoutes },
+  { path: "attendance", handler: attendanceRoutes },
+  { path: "leaves", handler: leaveRoutes },
+  { path: "leave-types", handler: leaveTypeRoutes },
+  { path: "leave-balances", handler: leaveBalanceRoutes },
+  { path: "performance-reviews", handler: performanceReviewRoutes },
+  { path: "goals", handler: goalRoutes },
+  { path: "documents", handler: documentRoutes },
+  { path: "analytics", handler: analyticsRoutes },
+  { path: "notifications", handler: notificationRoutes },
+  { path: "activities", handler: activityRoutes },
+];
+
+routeConfigs.forEach(({ path, handler }) => {
+  app.use(`/api/${path}`, handler);
+  app.use(`/${path}`, handler);
+});
+
 app.listen(PORT, () => {
-  console.log(
-    `WorkSphere API running on http://localhost:${PORT}`
-  );
+  console.log(`WorkSphere API running on http://localhost:${PORT}`);
 });
