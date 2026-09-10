@@ -162,7 +162,7 @@ export default function GoalsPage() {
 
         <button
           onClick={() => setShowCreate(true)}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 shadow-sm transition"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0F766E] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#115E59] shadow-sm transition"
         >
           <Plus size={16} />
           New Goal / OKR
@@ -195,7 +195,7 @@ export default function GoalsPage() {
                 {Math.round(averageProgress)}%
               </p>
             </div>
-            <div className="rounded-xl bg-blue-50 p-3 text-blue-600">
+            <div className="rounded-xl bg-teal-50 p-3 text-[#0F766E]">
               <TrendingUp size={20} />
             </div>
           </div>
@@ -209,7 +209,7 @@ export default function GoalsPage() {
               </p>
               <p className="mt-2 text-2xl font-bold text-slate-900">{inProgressGoals}</p>
             </div>
-            <div className="rounded-xl bg-indigo-50 p-3 text-indigo-600">
+            <div className="rounded-xl bg-blue-50 p-3 text-[#2563EB]">
               <Clock3 size={20} />
             </div>
           </div>
@@ -244,7 +244,7 @@ export default function GoalsPage() {
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="rounded-xl border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold outline-none focus:border-indigo-600"
+            className="rounded-xl border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold outline-none focus:border-[#0F766E]"
           >
             <option value="ALL">All Categories</option>
             {categories.map((c) => (
@@ -258,7 +258,7 @@ export default function GoalsPage() {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="rounded-xl border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold outline-none focus:border-indigo-600"
+            className="rounded-xl border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold outline-none focus:border-[#0F766E]"
           >
             <option value="ALL">All Statuses</option>
             <option value="NOT_STARTED">Not Started</option>
@@ -271,7 +271,7 @@ export default function GoalsPage() {
           <select
             value={priorityFilter}
             onChange={(e) => setPriorityFilter(e.target.value)}
-            className="rounded-xl border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold outline-none focus:border-indigo-600"
+            className="rounded-xl border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold outline-none focus:border-[#0F766E]"
           >
             <option value="ALL">All Priorities</option>
             <option value="CRITICAL">Critical</option>
@@ -315,7 +315,7 @@ export default function GoalsPage() {
             return (
               <div
                 key={goal.id}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between hover:border-indigo-200 transition"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between hover:border-teal-200 transition"
               >
                 <div>
                   {/* Top Badges & Delete */}
@@ -382,7 +382,7 @@ export default function GoalsPage() {
                   <div className="mt-5 rounded-xl bg-slate-50 p-3.5 border border-slate-100">
                     <div className="mb-2 flex items-center justify-between text-xs">
                       <span className="font-semibold text-slate-700 flex items-center gap-1.5">
-                        <Sliders className="h-3.5 w-3.5 text-indigo-600" />
+                        <Sliders className="h-3.5 w-3.5 text-[#0F766E]" />
                         Quick Progress Slider
                       </span>
                       <span className="font-bold text-slate-900 text-sm">{progress}%</span>
@@ -396,7 +396,7 @@ export default function GoalsPage() {
                       onChange={(e) =>
                         handleSliderChange(goal, Number(e.target.value))
                       }
-                      className="w-full cursor-pointer accent-indigo-600"
+                      className="w-full cursor-pointer accent-[#0F766E]"
                     />
 
                     <div className="mt-2 flex justify-between text-[11px] text-slate-400 font-medium">

@@ -341,7 +341,7 @@ export default function PerformanceReviewForm({
         <button
           type="submit"
           disabled={saving}
-          className="rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded-lg bg-[#0F766E] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#115E59] disabled:cursor-not-allowed disabled:opacity-50 transition shadow-sm"
         >
           {saving ? "Saving..." : "Create Review"}
         </button>

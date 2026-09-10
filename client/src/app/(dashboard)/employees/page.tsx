@@ -398,7 +398,7 @@ export default function EmployeesPage() {
           {/* Add Employee */}
           <Link
             href="/employees/new"
-            className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-semibold text-white shadow-xs transition hover:bg-slate-800"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#0F766E] px-4 py-2.5 text-xs font-semibold text-white shadow-xs transition hover:bg-[#115E59]"
           >
             <Plus className="h-4 w-4" />
             Add Employee

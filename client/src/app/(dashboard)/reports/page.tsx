@@ -141,7 +141,7 @@ export default function ReportsPage() {
 
           <button
             onClick={handlePrintPDF}
-            className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#0F766E] px-4 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-[#115E59]"
           >
             <Printer className="h-4 w-4" />
             Print / PDF
@@ -155,20 +155,20 @@ export default function ReportsPage() {
           onClick={() => setReportType("EMPLOYEE_DIRECTORY")}
           className={`flex items-center gap-3 rounded-2xl border p-4 text-left transition ${
             reportType === "EMPLOYEE_DIRECTORY"
-              ? "border-slate-900 bg-slate-900 text-white shadow-sm"
-              : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+              ? "border-[#0F766E] bg-[#0F766E] text-white shadow-sm"
+              : "border-slate-200 bg-white text-slate-700 hover:border-teal-200"
           }`}
         >
           <div
             className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
-              reportType === "EMPLOYEE_DIRECTORY" ? "bg-slate-800 text-white" : "bg-slate-100 text-slate-600"
+              reportType === "EMPLOYEE_DIRECTORY" ? "bg-[#115E59] text-white" : "bg-slate-100 text-slate-600"
             }`}
           >
             <Users className="h-5 w-5" />
           </div>
           <div>
             <p className="font-semibold text-sm">Employee Directory</p>
-            <p className={`text-xs ${reportType === "EMPLOYEE_DIRECTORY" ? "text-slate-300" : "text-slate-500"}`}>
+            <p className={`text-xs ${reportType === "EMPLOYEE_DIRECTORY" ? "text-teal-100" : "text-slate-500"}`}>
               {employees.length} records
             </p>
           </div>
@@ -178,20 +178,20 @@ export default function ReportsPage() {
           onClick={() => setReportType("ATTENDANCE_SUMMARY")}
           className={`flex items-center gap-3 rounded-2xl border p-4 text-left transition ${
             reportType === "ATTENDANCE_SUMMARY"
-              ? "border-slate-900 bg-slate-900 text-white shadow-sm"
-              : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+              ? "border-[#0F766E] bg-[#0F766E] text-white shadow-sm"
+              : "border-slate-200 bg-white text-slate-700 hover:border-teal-200"
           }`}
         >
           <div
             className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
-              reportType === "ATTENDANCE_SUMMARY" ? "bg-slate-800 text-white" : "bg-slate-100 text-slate-600"
+              reportType === "ATTENDANCE_SUMMARY" ? "bg-[#115E59] text-white" : "bg-slate-100 text-slate-600"
             }`}
           >
             <CheckCircle2 className="h-5 w-5" />
           </div>
           <div>
             <p className="font-semibold text-sm">Attendance Summary</p>
-            <p className={`text-xs ${reportType === "ATTENDANCE_SUMMARY" ? "text-slate-300" : "text-slate-500"}`}>
+            <p className={`text-xs ${reportType === "ATTENDANCE_SUMMARY" ? "text-teal-100" : "text-slate-500"}`}>
               {attendanceRecords.length} records
             </p>
           </div>
@@ -201,20 +201,20 @@ export default function ReportsPage() {
           onClick={() => setReportType("LEAVE_UTILIZATION")}
           className={`flex items-center gap-3 rounded-2xl border p-4 text-left transition ${
             reportType === "LEAVE_UTILIZATION"
-              ? "border-slate-900 bg-slate-900 text-white shadow-sm"
-              : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+              ? "border-[#0F766E] bg-[#0F766E] text-white shadow-sm"
+              : "border-slate-200 bg-white text-slate-700 hover:border-teal-200"
           }`}
         >
           <div
             className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
-              reportType === "LEAVE_UTILIZATION" ? "bg-slate-800 text-white" : "bg-slate-100 text-slate-600"
+              reportType === "LEAVE_UTILIZATION" ? "bg-[#115E59] text-white" : "bg-slate-100 text-slate-600"
             }`}
           >
             <Calendar className="h-5 w-5" />
           </div>
           <div>
             <p className="font-semibold text-sm">Leave Utilization</p>
-            <p className={`text-xs ${reportType === "LEAVE_UTILIZATION" ? "text-slate-300" : "text-slate-500"}`}>
+            <p className={`text-xs ${reportType === "LEAVE_UTILIZATION" ? "text-teal-100" : "text-slate-500"}`}>
               {leaveRequests.length} requests
             </p>
           </div>
@@ -224,20 +224,20 @@ export default function ReportsPage() {
           onClick={() => setReportType("DEPARTMENT_STATS")}
           className={`flex items-center gap-3 rounded-2xl border p-4 text-left transition ${
             reportType === "DEPARTMENT_STATS"
-              ? "border-slate-900 bg-slate-900 text-white shadow-sm"
-              : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+              ? "border-[#0F766E] bg-[#0F766E] text-white shadow-sm"
+              : "border-slate-200 bg-white text-slate-700 hover:border-teal-200"
           }`}
         >
           <div
             className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
-              reportType === "DEPARTMENT_STATS" ? "bg-slate-800 text-white" : "bg-slate-100 text-slate-600"
+              reportType === "DEPARTMENT_STATS" ? "bg-[#115E59] text-white" : "bg-slate-100 text-slate-600"
             }`}
           >
             <Building2 className="h-5 w-5" />
           </div>
           <div>
             <p className="font-semibold text-sm">Department Stats</p>
-            <p className={`text-xs ${reportType === "DEPARTMENT_STATS" ? "text-slate-300" : "text-slate-500"}`}>
+            <p className={`text-xs ${reportType === "DEPARTMENT_STATS" ? "text-teal-100" : "text-slate-500"}`}>
               {departments.length} departments
             </p>
           </div>

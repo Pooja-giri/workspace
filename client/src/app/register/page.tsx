@@ -88,25 +88,25 @@ export default function RegisterPage() {
     <main className="min-h-screen bg-slate-950">
       <div className="grid min-h-screen lg:grid-cols-2">
 
-        <div className="flex items-center justify-center bg-white px-6 py-12">
-          <div className="w-full max-w-md">
+        <div className="flex items-center justify-center bg-[#F8FAFC] px-6 py-12">
+          <div className="w-full max-w-md bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
 
             <div className="mb-8">
               <div className="mb-6 flex items-center gap-3 lg:hidden">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-950 font-bold text-white">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F766E] font-bold text-white shadow-sm">
                   W
                 </div>
 
-                <span className="text-2xl font-bold">
+                <span className="text-xl font-bold text-slate-900">
                   WorkSphere
                 </span>
               </div>
 
-              <h1 className="text-3xl font-bold text-slate-950">
+              <h1 className="text-2xl font-bold text-slate-900">
                 Create your workspace
               </h1>
 
-              <p className="mt-2 text-slate-500">
+              <p className="mt-1.5 text-sm text-slate-500 font-medium">
                 Start managing your workforce today.
               </p>
             </div>
@@ -162,7 +162,7 @@ export default function RegisterPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="mt-2 w-full rounded-xl bg-slate-950 px-4 py-3.5 font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
+                className="mt-2 w-full rounded-xl bg-[#0F766E] px-4 py-3.5 font-semibold text-white transition hover:bg-[#115E59] shadow-sm disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading
                   ? "Creating workspace..."
@@ -174,7 +174,7 @@ export default function RegisterPage() {
               Already have an account?{" "}
               <Link
                 href="/login"
-                className="font-semibold text-slate-950 hover:underline"
+                className="font-semibold text-[#0F766E] hover:underline"
               >
                 Sign in
               </Link>
@@ -183,31 +183,32 @@ export default function RegisterPage() {
           </div>
         </div>
 
-        <div className="hidden items-center justify-center bg-slate-900 p-12 text-white lg:flex">
+        <div className="hidden items-center justify-center bg-[#0F172A] p-12 text-white lg:flex border-l border-slate-800">
           <div className="max-w-lg">
 
             <div className="mb-8 flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-xl font-bold text-slate-950">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0F766E] text-xl font-bold text-white shadow-md">
                 W
               </div>
 
-              <span className="text-2xl font-bold">
+              <span className="text-2xl font-bold tracking-tight">
                 WorkSphere
               </span>
             </div>
 
-            <h2 className="text-5xl font-bold leading-tight">
+            <h2 className="text-5xl font-bold leading-tight tracking-tight">
               Everything your
               <br />
-              HR team needs.
+              <span className="text-teal-400">HR team needs.</span>
             </h2>
 
-            <div className="mt-8 space-y-4 text-slate-400">
-              <p>✓ Employee management</p>
-              <p>✓ Attendance tracking</p>
-              <p>✓ Leave management</p>
-              <p>✓ Performance reviews</p>
-              <p>✓ Workforce analytics</p>
+            <div className="mt-8 space-y-4 text-slate-300 font-medium">
+              <p className="flex items-center gap-2.5"><span className="text-teal-400 font-bold">✓</span> Employee management & directory</p>
+              <p className="flex items-center gap-2.5"><span className="text-teal-400 font-bold">✓</span> Attendance matrix & clocking</p>
+              <p className="flex items-center gap-2.5"><span className="text-teal-400 font-bold">✓</span> Leave approvals & balances</p>
+              <p className="flex items-center gap-2.5"><span className="text-teal-400 font-bold">✓</span> Goals & OKR sliders</p>
+              <p className="flex items-center gap-2.5"><span className="text-teal-400 font-bold">✓</span> 360° Performance reviews</p>
+              <p className="flex items-center gap-2.5"><span className="text-teal-400 font-bold">✓</span> Real-time workforce analytics</p>
             </div>
 
           </div>

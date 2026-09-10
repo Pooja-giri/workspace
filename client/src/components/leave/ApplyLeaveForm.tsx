@@ -265,7 +265,7 @@ export default function ApplyLeaveForm({ onClose }: Props) {
                 !endDate ||
                 !reason
               }
-              className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+              className="rounded-lg bg-[#0F766E] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#115E59] disabled:cursor-not-allowed disabled:opacity-50 transition"
             >
               {saving
                 ? "Submitting..."

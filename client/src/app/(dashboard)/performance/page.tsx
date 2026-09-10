@@ -139,7 +139,7 @@ export default function PerformancePage() {
 
         <button
           onClick={() => setShowCreate(true)}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 shadow-sm transition"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0F766E] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#115E59] shadow-sm transition"
         >
           <Plus size={16} />
           New Performance Review
@@ -158,7 +158,7 @@ export default function PerformancePage() {
                 {reviews.length}
               </p>
             </div>
-            <div className="rounded-xl bg-slate-50 p-3 text-slate-700">
+            <div className="rounded-xl bg-teal-50 p-3 text-[#0F766E]">
               <Award size={20} />
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function PerformancePage() {
                 {submittedCount}
               </p>
             </div>
-            <div className="rounded-xl bg-blue-50 p-3 text-blue-600">
+            <div className="rounded-xl bg-blue-50 p-3 text-[#2563EB]">
               <TrendingUp size={20} />
             </div>
           </div>
@@ -234,7 +234,7 @@ export default function PerformancePage() {
               onClick={() => setStatusFilter(st)}
               className={`rounded-xl px-3.5 py-1.5 text-xs font-semibold transition ${
                 statusFilter === st
-                  ? "bg-indigo-600 text-white shadow-sm"
+                  ? "bg-[#0F766E] text-white shadow-sm"
                   : "bg-slate-100 text-slate-600 hover:bg-slate-200"
               }`}
             >
@@ -339,7 +339,7 @@ export default function PerformancePage() {
                             e.stopPropagation();
                             setSelectedReview(review);
                           }}
-                          className="rounded-lg p-1.5 text-slate-400 hover:bg-indigo-50 hover:text-indigo-600 transition"
+                          className="rounded-lg p-1.5 text-slate-400 hover:bg-teal-50 hover:text-[#0F766E] transition"
                           title="Inspect full review"
                         >
                           <Eye size={16} />
@@ -369,7 +369,7 @@ export default function PerformancePage() {
           <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl space-y-6">
             <div className="flex items-center justify-between border-b pb-4">
               <div>
-                <span className="rounded-full bg-indigo-50 border border-indigo-100 px-3 py-1 text-xs font-bold text-indigo-700">
+                <span className="rounded-full bg-teal-50 border border-teal-200 px-3 py-1 text-xs font-bold text-[#0F766E]">
                   Performance Evaluation Scorecard
                 </span>
                 <h3 className="mt-2 text-xl font-bold text-slate-900">
@@ -398,7 +398,7 @@ export default function PerformancePage() {
                 <CriteriaMeter
                   label="Overall Rating"
                   score={selectedReview.overallRating || 4}
-                  color="bg-indigo-600"
+                  color="bg-[#0F766E]"
                 />
                 <CriteriaMeter
                   label="Technical Competency"
@@ -408,7 +408,7 @@ export default function PerformancePage() {
                 <CriteriaMeter
                   label="Communication & Clarity"
                   score={selectedReview.communicationRating || 4}
-                  color="bg-blue-500"
+                  color="bg-[#2563EB]"
                 />
                 <CriteriaMeter
                   label="Leadership & Teamwork"

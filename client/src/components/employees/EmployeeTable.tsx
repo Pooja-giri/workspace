@@ -219,7 +219,7 @@ export default function EmployeeTable({
                         <div className="min-w-0">
                           <Link
                             href={`/employees/${employee.id}`}
-                            className="font-semibold text-slate-900 hover:underline hover:text-indigo-600 truncate block text-sm"
+                            className="font-semibold text-slate-900 hover:underline hover:text-[#0F766E] truncate block text-sm transition"
                           >
                             {employee.firstName} {employee.lastName}
                           </Link>

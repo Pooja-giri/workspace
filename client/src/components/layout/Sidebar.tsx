@@ -47,17 +47,17 @@ export default function Sidebar({
             className="flex items-center gap-3"
             onClick={onClose}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-sm font-bold text-white">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0F766E] text-sm font-bold text-white shadow-sm">
               W
             </div>
 
             <div>
-              <p className="font-bold text-slate-950">
+              <p className="font-bold text-[#0F172A] tracking-tight">
                 WorkSphere
               </p>
 
-              <p className="text-[10px] uppercase tracking-wider text-slate-400">
-                HR Platform
+              <p className="text-[10px] uppercase font-semibold tracking-wider text-[#0F766E]">
+                Enterprise HR
               </p>
             </div>
           </Link>
@@ -101,12 +101,12 @@ export default function Sidebar({
                         text-sm font-medium transition
                         ${
                           active
-                            ? "bg-slate-950 text-white"
-                            : "text-slate-600 hover:bg-slate-100 hover:text-slate-950"
+                            ? "bg-[#0F766E] text-white shadow-sm"
+                            : "text-slate-600 hover:bg-teal-50/70 hover:text-[#0F766E]"
                         }
                       `}
                     >
-                      <Icon size={18} />
+                      <Icon size={18} className={active ? "text-white" : "text-slate-400"} />
 
                       <span>{item.name}</span>
                     </Link>
@@ -119,13 +119,13 @@ export default function Sidebar({
 
         {/* Bottom */}
         <div className="border-t border-slate-200 p-4">
-          <div className="rounded-xl bg-slate-50 p-3">
-            <p className="text-xs font-semibold text-slate-900">
-              WorkSphere
+          <div className="rounded-xl bg-teal-50/70 border border-teal-100 p-3">
+            <p className="text-xs font-bold text-[#0F766E]">
+              WorkSphere Pro
             </p>
 
-            <p className="mt-1 text-[11px] text-slate-500">
-              Enterprise HR Management
+            <p className="mt-0.5 text-[11px] text-slate-600">
+              Teal + Navy Enterprise Suite
             </p>
           </div>
         </div>

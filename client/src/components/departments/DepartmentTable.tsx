@@ -69,20 +69,20 @@ export default function DepartmentTable({
                 >
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50">
-                        <Building2 className="h-5 w-5 text-indigo-600" />
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-[#0F766E]">
+                        <Building2 className="h-5 w-5" />
                       </div>
 
                       <div>
                         <Link
                           href={`/departments/${department.id}`}
-                          className="font-medium text-slate-900 hover:text-indigo-600"
+                          className="font-semibold text-slate-900 hover:text-[#0F766E] transition"
                         >
                           {department.name}
                         </Link>
 
                         {department.description && (
-                          <p className="mt-0.5 max-w-md truncate text-sm text-slate-500">
+                          <p className="mt-0.5 max-w-md truncate text-xs text-slate-500">
                             {department.description}
                           </p>
                         )}
@@ -93,26 +93,26 @@ export default function DepartmentTable({
                   <td className="px-6 py-4">
                     {department.manager ? (
                       <div>
-                        <p className="font-medium text-slate-900">
+                        <p className="font-semibold text-slate-900">
                           {department.manager.firstName}{" "}
                           {department.manager.lastName}
                         </p>
 
-                        <p className="text-sm text-slate-500">
+                        <p className="text-xs text-slate-500">
                           {department.manager.jobTitle ||
                             "Department Head"}
                         </p>
                       </div>
                     ) : (
-                      <span className="text-sm text-slate-400">
+                      <span className="text-xs text-slate-400">
                         Not assigned
                       </span>
                     )}
                   </td>
 
                   <td className="px-6 py-4">
-                    <div className="flex items-center gap-2 text-sm text-slate-600">
-                      <Users className="h-4 w-4" />
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                      <Users className="h-4 w-4 text-slate-400" />
 
                       {employeeCount}
                     </div>
@@ -121,7 +121,7 @@ export default function DepartmentTable({
                   <td className="px-6 py-4 text-right">
                     <Link
                       href={`/departments/${department.id}`}
-                      className="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-indigo-600 hover:bg-indigo-50"
+                      className="inline-flex items-center gap-1 rounded-xl px-3 py-1.5 text-xs font-semibold text-[#0F766E] hover:bg-teal-50 transition"
                     >
                       View
                       <ChevronRight className="h-4 w-4" />

@@ -17,6 +17,8 @@ import {
   ClipboardCheck,
   ArrowRight,
   X,
+  User,
+  Settings,
 } from "lucide-react";
 import { useAppSelector } from "@/hooks/redux";
 
@@ -83,6 +85,8 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
     { label: "Reports", href: "/reports", category: "Navigation", icon: Settings2, desc: "Generate CSV and PDF reports" },
     { label: "Activity", href: "/activity", category: "Navigation", icon: Activity, desc: "Audit logs & organization activity" },
     { label: "Notifications", href: "/notifications", category: "Navigation", icon: Bell, desc: "System updates & alerts" },
+    { label: "My Profile", href: "/profile", category: "Navigation", icon: User, desc: "Manage personal credentials & account" },
+    { label: "Settings", href: "/settings", category: "Navigation", icon: Settings, desc: "Workspace configuration & security" },
   ];
 
   const filteredResults = useMemo(() => {
@@ -303,13 +307,13 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
                     onClick={() => handleSelect(item.href)}
                     onMouseEnter={() => setSelectedIndex(index)}
                     className={`flex w-full items-center justify-between gap-3 rounded-xl px-3.5 py-2.5 text-left text-sm transition ${
-                      isSelected ? "bg-slate-900 text-white" : "text-slate-700 hover:bg-slate-100"
+                      isSelected ? "bg-[#0F766E] text-white shadow-xs" : "text-slate-700 hover:bg-teal-50/70 hover:text-[#0F766E]"
                     }`}
                   >
                     <div className="flex items-center gap-3 min-w-0">
                       <div
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${
-                          isSelected ? "bg-slate-800 text-white" : "bg-slate-100 text-slate-600"
+                          isSelected ? "bg-[#115E59] text-white" : "bg-teal-50 text-[#0F766E]"
                         }`}
                       >
                         <Icon className="h-4 w-4" />

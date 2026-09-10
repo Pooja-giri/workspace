@@ -186,7 +186,7 @@ export default function LeavePage() {
         <button
           type="button"
           onClick={() => setShowApplyForm(true)}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 shadow-sm"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0F766E] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#115E59] shadow-sm"
         >
           <Plus className="h-4 w-4" />
           Apply Leave
@@ -258,8 +258,8 @@ export default function LeavePage() {
           onClick={() => setActiveTab("requests")}
           className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-xs font-bold transition ${
             activeTab === "requests"
-              ? "bg-slate-900 text-white shadow-sm"
-              : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+              ? "bg-[#0F766E] text-white shadow-sm"
+              : "text-slate-600 hover:text-[#0F766E] hover:bg-teal-50/50"
           }`}
         >
           <Layers className="h-4 w-4" />
@@ -270,8 +270,8 @@ export default function LeavePage() {
           onClick={() => setActiveTab("approvals")}
           className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-xs font-bold transition ${
             activeTab === "approvals"
-              ? "bg-slate-900 text-white shadow-sm"
-              : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+              ? "bg-[#0F766E] text-white shadow-sm"
+              : "text-slate-600 hover:text-[#0F766E] hover:bg-teal-50/50"
           }`}
         >
           <ShieldCheck className="h-4 w-4 text-amber-500" />
@@ -287,8 +287,8 @@ export default function LeavePage() {
           onClick={() => setActiveTab("calendar")}
           className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-xs font-bold transition ${
             activeTab === "calendar"
-              ? "bg-slate-900 text-white shadow-sm"
-              : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+              ? "bg-[#0F766E] text-white shadow-sm"
+              : "text-slate-600 hover:text-[#0F766E] hover:bg-teal-50/50"
           }`}
         >
           <Calendar className="h-4 w-4" />
@@ -299,8 +299,8 @@ export default function LeavePage() {
           onClick={() => setActiveTab("balances")}
           className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-xs font-bold transition ${
             activeTab === "balances"
-              ? "bg-slate-900 text-white shadow-sm"
-              : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+              ? "bg-[#0F766E] text-white shadow-sm"
+              : "text-slate-600 hover:text-[#0F766E] hover:bg-teal-50/50"
           }`}
         >
           <UserCheck className="h-4 w-4" />
@@ -323,7 +323,7 @@ export default function LeavePage() {
                   onClick={() => setStatusFilter(st)}
                   className={`rounded-lg px-3 py-1 text-xs font-semibold transition ${
                     statusFilter === st
-                      ? "bg-indigo-600 text-white"
+                      ? "bg-[#0F766E] text-white"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                   }`}
                 >
@@ -340,7 +340,7 @@ export default function LeavePage() {
 
             {loading ? (
               <div className="flex items-center justify-center py-12">
-                <div className="h-7 w-7 animate-spin rounded-full border-2 border-slate-300 border-t-indigo-600" />
+                <div className="h-7 w-7 animate-spin rounded-full border-2 border-slate-300 border-t-[#0F766E]" />
                 <span className="ml-3 text-sm text-slate-500 font-medium">
                   Loading leave requests...
                 </span>
@@ -438,7 +438,7 @@ export default function LeavePage() {
               {pendingRequests.map((req) => (
                 <div
                   key={req.id}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between hover:border-indigo-200 transition"
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between hover:border-teal-200 transition"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
@@ -552,7 +552,7 @@ export default function LeavePage() {
                     key={`day-${day}`}
                     className={`min-h-[100px] rounded-xl border p-2 flex flex-col justify-between transition ${
                       isToday
-                        ? "border-indigo-500 bg-indigo-50/20"
+                        ? "border-[#0F766E] bg-teal-50/30 ring-1 ring-[#0F766E]"
                         : "border-slate-100 bg-white hover:border-slate-300"
                     }`}
                   >
@@ -560,14 +560,14 @@ export default function LeavePage() {
                       <span
                         className={`text-xs font-bold ${
                           isToday
-                            ? "flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 text-white"
+                            ? "flex h-6 w-6 items-center justify-center rounded-full bg-[#0F766E] text-white shadow-xs"
                             : "text-slate-800"
                         }`}
                       >
                         {day}
                       </span>
                       {dayLeaves.length > 0 && (
-                        <span className="text-[10px] font-bold text-purple-700 bg-purple-100 px-1.5 py-0.5 rounded-full">
+                        <span className="text-[10px] font-bold text-[#0F766E] bg-teal-50 border border-teal-200 px-1.5 py-0.5 rounded-full">
                           {dayLeaves.length} Off
                         </span>
                       )}
@@ -577,7 +577,7 @@ export default function LeavePage() {
                       {dayLeaves.slice(0, 2).map((l) => (
                         <div
                           key={l.id}
-                          className="rounded bg-purple-50 border border-purple-200 px-1.5 py-0.5 text-[10px] font-semibold text-purple-800 truncate"
+                          className="rounded bg-teal-50 border border-teal-100 px-1.5 py-0.5 text-[10px] font-semibold text-[#0F766E] truncate"
                           title={`${l.employee?.firstName} ${l.employee?.lastName} - ${l.leaveType?.name}`}
                         >
                           {l.employee?.firstName} ({l.leaveType?.name?.slice(0, 3)})
@@ -611,7 +611,7 @@ export default function LeavePage() {
             <select
               value={selectedEmployeeId}
               onChange={(e) => setSelectedEmployeeId(e.target.value)}
-              className="mt-4 w-full max-w-md rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 font-medium"
+              className="mt-4 w-full max-w-md rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 outline-none focus:border-[#0F766E] focus:ring-2 focus:ring-teal-100 font-medium"
             >
               <option value="">Select an employee...</option>
               {employees.map((emp) => (

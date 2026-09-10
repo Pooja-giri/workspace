@@ -58,7 +58,7 @@ export default function DashboardShell({
       <div className="flex min-h-screen items-center justify-center bg-slate-50">
         <div className="flex flex-col items-center gap-3">
 
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-950 font-bold text-white">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0F766E] font-bold text-white shadow-md">
             W
           </div>
 

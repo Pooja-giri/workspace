@@ -112,7 +112,7 @@ export default function Header({
               }
               className="flex items-center gap-2 rounded-xl px-2 py-1.5 transition hover:bg-slate-50"
             >
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-200 text-sm font-semibold text-slate-700">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-50 border border-teal-200 text-sm font-bold text-[#0F766E]">
                 {user?.name
                   ?.charAt(0)
                   .toUpperCase()}

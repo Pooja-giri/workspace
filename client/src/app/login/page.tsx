@@ -51,22 +51,22 @@ export default function LoginPage() {
       <div className="grid min-h-screen lg:grid-cols-2">
 
         {/* Left */}
-        <div className="hidden items-center justify-center bg-slate-900 p-12 lg:flex">
+        <div className="hidden items-center justify-center bg-[#0F172A] p-12 lg:flex border-r border-slate-800">
           <div className="max-w-lg text-white">
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white font-bold text-slate-950">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0F766E] font-bold text-white shadow-md">
                 W
               </div>
 
-              <span className="text-2xl font-bold">
+              <span className="text-2xl font-bold tracking-tight">
                 WorkSphere
               </span>
             </div>
 
-            <h1 className="text-5xl font-bold leading-tight">
+            <h1 className="text-5xl font-bold leading-tight tracking-tight">
               Your workforce.
               <br />
-              One powerful platform.
+              <span className="text-teal-400">One powerful platform.</span>
             </h1>
 
             <p className="mt-6 text-lg leading-8 text-slate-400">
@@ -78,15 +78,22 @@ export default function LoginPage() {
         </div>
 
         {/* Right */}
-        <div className="flex items-center justify-center bg-white px-6 py-12">
-          <div className="w-full max-w-md">
+        <div className="flex items-center justify-center bg-[#F8FAFC] px-6 py-12">
+          <div className="w-full max-w-md bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
 
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-slate-950">
+              <div className="mb-6 flex items-center gap-3 lg:hidden">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F766E] font-bold text-white">
+                  W
+                </div>
+                <span className="text-xl font-bold text-slate-900">WorkSphere</span>
+              </div>
+
+              <h2 className="text-2xl font-bold text-slate-900">
                 Welcome back
               </h2>
 
-              <p className="mt-2 text-slate-500">
+              <p className="mt-1.5 text-sm text-slate-500 font-medium">
                 Sign in to your WorkSphere account.
               </p>
             </div>
@@ -120,7 +127,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-xl bg-slate-950 px-4 py-3.5 font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
+                className="w-full rounded-xl bg-[#0F766E] px-4 py-3.5 font-semibold text-white transition hover:bg-[#115E59] shadow-sm disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading ? "Signing in..." : "Sign in"}
               </button>
@@ -130,7 +137,7 @@ export default function LoginPage() {
               Don&apos;t have an account?{" "}
               <Link
                 href="/register"
-                className="font-semibold text-slate-950 hover:underline"
+                className="font-semibold text-[#0F766E] hover:underline"
               >
                 Create one
               </Link>

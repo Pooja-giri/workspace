@@ -10,6 +10,7 @@ import {
   BarChart3,
   Settings2,
   ActivityIcon,
+  Settings,
 } from "lucide-react";
 
 export const navigation = [
@@ -27,10 +28,10 @@ export const navigation = [
         icon: BarChart3,
       },
       {
-      name: "Activity",
-      href: "/activity",
-      icon: ActivityIcon,
-    },
+        name: "Activity",
+        href: "/activity",
+        icon: ActivityIcon,
+      },
     ],
   },
 
@@ -99,6 +100,17 @@ export const navigation = [
         name: "Reports",
         href: "/reports",
         icon: Settings2,
+      },
+    ],
+  },
+
+  {
+    label: "System",
+    items: [
+      {
+        name: "Settings",
+        href: "/settings",
+        icon: Settings,
       },
     ],
   },

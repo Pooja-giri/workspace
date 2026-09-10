@@ -23,7 +23,7 @@ export default function AuthInput({
         {...props}
         className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition
           placeholder:text-slate-400
-          focus:border-slate-900 focus:ring-2 focus:ring-slate-200
+          focus:border-[#0F766E] focus:ring-2 focus:ring-teal-100
           ${
             error
               ? "border-red-400"

@@ -252,7 +252,7 @@ export default function LeaveTypeForm({
             <button
               type="submit"
               disabled={saving}
-              className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+              className="rounded-lg bg-[#0F766E] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#115E59] disabled:opacity-50 transition"
             >
               {saving
                 ? "Saving..."

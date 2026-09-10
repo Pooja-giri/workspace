@@ -253,7 +253,7 @@ export default function EmployeeDetailsPage() {
       {/* Top Profile Summary Card */}
       <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-          <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl bg-indigo-600 text-2xl font-bold text-white shadow-md">
+          <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl bg-[#0F766E] text-2xl font-bold text-white shadow-md">
             {selectedEmployee.firstName[0]}
             {selectedEmployee.lastName[0]}
           </div>
@@ -275,7 +275,7 @@ export default function EmployeeDetailsPage() {
                 />
                 {selectedEmployee.employmentStatus.replace("_", " ")}
               </span>
-              <span className="rounded-full bg-indigo-50 border border-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700">
+              <span className="rounded-full bg-teal-50 border border-teal-100 px-3 py-1 text-xs font-semibold text-[#0F766E]">
                 {selectedEmployee.employeeCode}
               </span>
             </div>
@@ -398,7 +398,7 @@ export default function EmployeeDetailsPage() {
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <h3 className="text-base font-semibold text-slate-900 flex items-center gap-2">
-                  <FolderGit2 className="h-5 w-5 text-indigo-600" />
+                  <FolderGit2 className="h-5 w-5 text-[#0F766E]" />
                   Assigned Projects & Capacity
                 </h3>
                 <span className="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">
@@ -415,13 +415,13 @@ export default function EmployeeDetailsPage() {
                         <p className="text-xs text-slate-500 mt-0.5">{proj.role}</p>
                       </div>
                       <div className="text-right">
-                        <span className="text-sm font-bold text-indigo-600">{proj.allocation}%</span>
+                        <span className="text-sm font-bold text-[#0F766E]">{proj.allocation}%</span>
                         <p className="text-[11px] text-slate-400 font-medium">{proj.status}</p>
                       </div>
                     </div>
                     <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-slate-200">
                       <div
-                        className="h-full rounded-full bg-indigo-600 transition-all duration-500"
+                        className="h-full rounded-full bg-[#0F766E] transition-all duration-500"
                         style={{ width: `${proj.allocation}%` }}
                       />
                     </div>
@@ -452,8 +452,8 @@ export default function EmployeeDetailsPage() {
                           skill.level >= 90
                             ? "bg-emerald-500"
                             : skill.level >= 80
-                            ? "bg-indigo-600"
-                            : "bg-blue-500"
+                            ? "bg-[#0F766E]"
+                            : "bg-[#2563EB]"
                         }`}
                         style={{ width: `${skill.level}%` }}
                       />
@@ -462,12 +462,12 @@ export default function EmployeeDetailsPage() {
                 ))}
               </div>
 
-              <div className="mt-6 rounded-xl bg-indigo-50/60 border border-indigo-100 p-3.5">
-                <div className="flex items-center gap-2 text-indigo-800 text-xs font-semibold">
+              <div className="mt-6 rounded-xl bg-teal-50/60 border border-teal-100 p-3.5">
+                <div className="flex items-center gap-2 text-teal-800 text-xs font-semibold">
                   <Shield className="h-4 w-4" />
                   Verified Skill Matrix
                 </div>
-                <p className="mt-1 text-[11px] text-indigo-600/80 leading-relaxed">
+                <p className="mt-1 text-[11px] text-teal-700/80 leading-relaxed">
                   Competencies evaluated during quarterly review cycles and project delivery audits.
                 </p>
               </div>
@@ -505,7 +505,7 @@ export default function EmployeeDetailsPage() {
             </div>
             <Link
               href="/attendance"
-              className="text-xs font-semibold text-indigo-600 hover:text-indigo-800"
+              className="text-xs font-semibold text-[#0F766E] hover:underline"
             >
               View Company Matrix &rarr;
             </Link>
@@ -690,7 +690,7 @@ export default function EmployeeDetailsPage() {
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="rounded-full bg-indigo-50 border border-indigo-100 px-2.5 py-1 text-xs font-semibold text-indigo-700">
+                  <span className="rounded-full bg-teal-50 border border-teal-100 px-2.5 py-1 text-xs font-semibold text-[#0F766E]">
                     {proj.status}
                   </span>
                   <span className="text-sm font-bold text-slate-900">
@@ -704,7 +704,7 @@ export default function EmployeeDetailsPage() {
               <div className="mt-6 pt-4 border-t border-slate-100">
                 <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100">
                   <div
-                    className="h-full rounded-full bg-indigo-600"
+                    className="h-full rounded-full bg-[#0F766E]"
                     style={{ width: `${proj.allocation}%` }}
                   />
                 </div>
@@ -728,7 +728,7 @@ export default function EmployeeDetailsPage() {
             </div>
             <button
               onClick={() => setDocUploadModal(true)}
-              className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white hover:bg-slate-800 transition"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#0F766E] px-4 py-2 text-xs font-semibold text-white hover:bg-[#115E59] shadow-sm transition"
             >
               <Upload className="h-3.5 w-3.5" />
               Upload Document
@@ -739,10 +739,10 @@ export default function EmployeeDetailsPage() {
             {documents.map((doc) => (
               <div
                 key={doc.id}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm flex items-center justify-between hover:border-indigo-200 transition"
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm flex items-center justify-between hover:border-teal-200 transition"
               >
                 <div className="flex items-center gap-3.5 min-w-0">
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-teal-50 text-[#0F766E]">
                     <FileText className="h-6 w-6" />
                   </div>
                   <div className="min-w-0">
@@ -830,12 +830,12 @@ export default function EmployeeDetailsPage() {
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="text-base font-semibold text-slate-900 flex items-center gap-2">
-                <Target className="h-5 w-5 text-indigo-600" />
+                <Target className="h-5 w-5 text-[#0F766E]" />
                 Active Objectives & Key Results (OKRs)
               </h3>
               <Link
                 href="/goals"
-                className="text-xs font-semibold text-indigo-600 hover:text-indigo-800"
+                className="text-xs font-semibold text-[#0F766E] hover:underline"
               >
                 Manage All Goals &rarr;
               </Link>
@@ -850,7 +850,7 @@ export default function EmployeeDetailsPage() {
                 {employeeGoals.map((g) => (
                   <div key={g.id} className="rounded-xl border border-slate-100 p-4 bg-slate-50/50">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded">
+                      <span className="text-xs font-semibold text-[#0F766E] bg-teal-50 px-2 py-0.5 rounded">
                         {g.category || "General"}
                       </span>
                       <span className="text-xs font-bold text-slate-900">{g.status}</span>
@@ -865,7 +865,7 @@ export default function EmployeeDetailsPage() {
                       </div>
                       <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200">
                         <div
-                          className="h-full rounded-full bg-indigo-600"
+                          className="h-full rounded-full bg-[#0F766E]"
                           style={{
                             width: `${Math.min(
                               g.progress ??
@@ -950,7 +950,7 @@ function TabButton({
       onClick={onClick}
       className={`inline-flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 transition-colors whitespace-nowrap ${
         active
-          ? "border-indigo-600 text-indigo-600"
+          ? "border-[#0F766E] text-[#0F766E]"
           : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
       }`}
     >
@@ -959,7 +959,7 @@ function TabButton({
       {typeof badge === "number" && (
         <span
           className={`rounded-full px-2 py-0.5 text-xs font-bold ${
-            active ? "bg-indigo-100 text-indigo-700" : "bg-slate-100 text-slate-600"
+            active ? "bg-teal-100 text-[#0F766E]" : "bg-slate-100 text-slate-600"
           }`}
         >
           {badge}

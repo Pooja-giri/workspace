@@ -215,7 +215,7 @@ export default function AttendancePage() {
               onClick={() => setViewMode("matrix")}
               className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
                 viewMode === "matrix"
-                  ? "bg-indigo-600 text-white shadow-sm"
+                  ? "bg-[#0F766E] text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -226,7 +226,7 @@ export default function AttendancePage() {
               onClick={() => setViewMode("table")}
               className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
                 viewMode === "table"
-                  ? "bg-indigo-600 text-white shadow-sm"
+                  ? "bg-[#0F766E] text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -247,7 +247,7 @@ export default function AttendancePage() {
           <button
             type="button"
             onClick={() => setShowMarkAttendance(true)}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-slate-800 transition"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0F766E] px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-[#115E59] transition"
           >
             <Plus size={16} />
             Mark Attendance
@@ -264,7 +264,7 @@ export default function AttendancePage() {
         <SummaryCard
           title="Total Punches Logged"
           value={summary.total}
-          icon={<CalendarDays className="h-5 w-5 text-indigo-600" />}
+          icon={<CalendarDays className="h-5 w-5 text-[#0F766E]" />}
         />
         <SummaryCard
           title="Present On-Site"
@@ -399,7 +399,7 @@ export default function AttendancePage() {
                   type="date"
                   value={date}
                   onChange={(event) => setDate(event.target.value)}
-                  className="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100"
+                  className="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs outline-none focus:border-[#0F766E] focus:ring-2 focus:ring-teal-100"
                 />
               </div>
 
@@ -416,7 +416,7 @@ export default function AttendancePage() {
                   onChange={(event) =>
                     setStatus(event.target.value as AttendanceStatus | "")
                   }
-                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100"
+                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs outline-none focus:border-[#0F766E] focus:ring-2 focus:ring-teal-100"
                 >
                   <option value="">All statuses</option>
                   <option value="PRESENT">Present</option>
